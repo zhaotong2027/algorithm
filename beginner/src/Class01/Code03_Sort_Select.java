@@ -12,20 +12,20 @@ import java.util.ArrayList;
 public class Code03_Sort_Select {
 
     public static ArrayList<Integer> selectSort(ArrayList<Integer> ints) {
-        for (int i = 0; i < ints.size(); i++) {
-            Integer minValue = ints.get(i);
-            int minIndex = i;
-            for ( int j = i + 1 ; j < ints.size(); j++) {
+        for (int j = 0; j < ints.size(); j++) {
+            Integer minValue = ints.get(j);
+            int minIndex = j;
+            for ( int i = j + 1 ; i < ints.size(); i++) {
 //                if (minValue > ints.get(j)) {
 //                    minValue = ints.get(j);
 //                    minIndex = j;
 //                }
-                minValue = minValue > ints.get(j) ? ints.get(j) : minValue;
-                minIndex = minValue > ints.get(j)? j : minIndex;
+                minValue = minValue > ints.get(i) ? ints.get(i) : minValue;
+                minIndex = minValue > ints.get(i)? i : minIndex;
             }
-            if (minValue < ints.get(i)) {
-                ints.set(minIndex, ints.get(i));
-                ints.set(i, minValue);
+            if (minValue < ints.get(j)) {
+                ints.set(minIndex, ints.get(j));
+                ints.set(j, minValue);
             }
             System.out.println(ints.toString());
         }
