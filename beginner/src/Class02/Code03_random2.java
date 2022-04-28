@@ -2,7 +2,7 @@ package Class02;
 
 // 从1～5随机到1～7
 // 从a～b随机到c～d
-// 01不等概率随机到01等概率随机
+// 0,1固定不等概率随机到01等概率随机
 public class Code03_random2 {
     public static void main(String[] args) {
         // f() 1~5 正数等概率，根据 f() 得到1～7的随机
@@ -17,8 +17,76 @@ public class Code03_random2 {
         // 3~19 -> 17~56
 //        testf11(); // 3~19 等概率，验证成功
 //        testf12(); // 3~19 -> 0、1 等概率，验证成功
-        testf13(); // 0,1 -> 17~56 等概率，验证成功
+//        testf13(); // 0,1 -> 17~56 等概率，验证成功
+
+        // 0,1 固定不等概率 -> 0,1 等概率
+//        testf21(); // 0,1 不等概率，验证成功
+//        testf22(); // 0,1 固定不等概率 -> 0,1 等概率，验证成功
+        testf23();
     }
+
+    // 0,1 固定不等概率 -> 0,1 等概率，优化
+    public static int f23() {
+        int ans = 0;
+        do {
+            ans = f21();
+        } while (ans == f21());
+//        ans = 0, 1
+//        ans = 1, 0
+        return ans;
+    }
+    public static void testf23() {
+        int testTimes = 10000000;
+        int[] counts = new int[2];
+        for (int i = 0; i < testTimes; i++) {
+            int ans = f23();
+            counts[ans]++;
+        }
+        for (int i = 0; i < 2; i++) {
+            System.out.println("这个数 " + i + " 出现了 " + counts[i]+" 次");
+        }
+    }
+
+    // 0,1 固定不等概率 -> 0,1 等概率
+    public static int f22() {
+        int ans = 0;
+        do {
+            ans = (f21() << 1) + (f21() << 0);
+        } while (ans == 0 || ans == 3);
+        return ans == 1 ? 0 : 1;
+    }
+    public static void testf22() {
+        int testTimes = 10000000;
+        int[] counts = new int[2];
+        for (int i = 0; i < testTimes; i++) {
+            int ans = f22();
+            counts[ans]++;
+        }
+        for (int i = 0; i < 2; i++) {
+            System.out.println("这个数 " + i + " 出现了 " + counts[i]+" 次");
+        }
+    }
+
+    // 0,1 不等概率，不可修改
+    public static int f21() {
+//        int ans = (int)(Math.random()*5);
+//        return ans < 3 ? 0 : 1;
+        return Math.random() < 0.83 ? 0 : 1;
+    }
+    public static void testf21() {
+        int testTimes = 10000000;
+        int[] counts = new int[2];
+        for (int i = 0; i < testTimes; i++) {
+            int ans = f21();
+            counts[ans]++;
+        }
+        for (int i = 0; i < 2; i++) {
+            System.out.println("这个数 " + i + " 出现了 " + counts[i]+" 次");
+        }
+    }
+
+
+
 
     // 0,1 -> 17~56
     public static int f13() {
