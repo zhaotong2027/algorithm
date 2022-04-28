@@ -11,6 +11,7 @@ import java.util.ArrayList;
 * */
 public class Code03_Sort_Select {
 
+    // 每次选出最小值放前面
     public static ArrayList<Integer> selectSort(ArrayList<Integer> ints) {
         for (int j = 0; j < ints.size(); j++) {
             Integer minValue = ints.get(j);

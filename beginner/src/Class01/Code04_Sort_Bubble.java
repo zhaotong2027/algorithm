@@ -3,7 +3,8 @@ package Class01;
 import java.util.ArrayList;
 /*
 *
-* 冒泡排序：第一轮循环所有数，拿相邻两个数比对，数小的放前面，第一轮交换结束把最大值放最后一位
+* 冒泡排序：基数和待排序数是相邻的两个数
+*         第一轮循环所有数，拿相邻两个数比对，数小的放前面，第一轮交换结束把最大值放最后一位
 *         第二轮循环除最后一位的得到所有数，交换结束把循环里最大的放倒第二位，依次类推
 *
 * 时间复杂度：
@@ -18,6 +19,7 @@ public class Code04_Sort_Bubble {
         }
         return ints;
     }
+    // 每次排出最大数放在最后
     public static ArrayList<Integer> bubbleSort(ArrayList<Integer> ints) {
         for (int j = 0; j < ints.size(); j++) {
             for (int i = 0; i + 1 < ints.size() - j; i++) {
