@@ -34,6 +34,7 @@ public class Code05_Sort_Insert {
         }
         return ints;
     }
+
     // 外循环下标end从1开始，每次+1；内循环下标从end-1开始，每次-1；
     // 第一轮比对1和0，如果发现1比0小则交换
     // 第二轮比对2和1、0，如果发现2比谁小放在谁前面
@@ -80,7 +81,7 @@ public class Code05_Sort_Insert {
 //                    ints.set(i, temp);
 //                }
                 swap(ints, pre-1, pre);
-                System.out.println(ints.toString());
+//                System.out.println(ints.toString());
             }
         }
         return ints;
