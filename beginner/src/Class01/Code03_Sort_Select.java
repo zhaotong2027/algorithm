@@ -23,7 +23,7 @@ public class Code03_Sort_Select {
                     minIndex = i;
                 }
 //                minValue = minValue > ints.get(i) ? ints.get(i) : minValue;
-//                minIndex = minValue > ints.get(i) ? i : minIndex;
+//                minIndex = minValue > ints.get(i) ? i : minIndex; // 错在不能同时修改
             }
             if (minValue < ints.get(j)) {
                 ints.set(minIndex, ints.get(j));
