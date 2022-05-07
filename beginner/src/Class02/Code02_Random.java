@@ -1,6 +1,6 @@
 package Class02;
 
-public class Code02_random {
+public class Code02_Random {
     public static void main(String[] args) {
         System.out.println("开始");
         // Math.random() -> double -> [0,1)

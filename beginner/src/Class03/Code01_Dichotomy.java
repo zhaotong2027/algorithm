@@ -7,7 +7,7 @@ import static Class01.Code05_Sort_Insert.insertSort4;
 /**
  * 有序数组中找到num：二分法
  */
-public class Code01_dichotomy {
+public class Code01_Dichotomy {
     public static void main(String[] args) {
 //        ArrayList<Integer> ints = new ArrayList<Integer>();
 //        ints.add(150);
@@ -44,7 +44,6 @@ public class Code01_dichotomy {
                 System.out.println(ints.toString());
             }
         }
-
 
     }
 

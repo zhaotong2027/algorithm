@@ -3,7 +3,7 @@ package Class02;
 // 从1～5随机到1～7
 // 从a～b随机到c～d
 // 0,1固定不等概率随机到01等概率随机
-public class Code03_randomRange {
+public class Code03_RandomRange {
     public static void main(String[] args) {
         // f() 1~5 正数等概率，根据 f() 得到1～7的随机
 //        testf(); // 1~5 等概率，验证成功

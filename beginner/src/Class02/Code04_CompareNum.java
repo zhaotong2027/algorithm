@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import static Class01.Code03_Sort_Select.selectSort;
 import static Class01.Code05_Sort_Insert.insertSort4;
 
-public class Code04_compareNum {
+public class Code04_CompareNum {
     public static void main(String[] args) {
         // 生成数组
         ArrayList<Integer> ints = lenRandomValueRandom(10,8);
