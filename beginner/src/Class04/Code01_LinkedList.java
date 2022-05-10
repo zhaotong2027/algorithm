@@ -60,7 +60,7 @@ public class Code01_LinkedList {
             ready = node;
             node = head;
         }
-        return  ready;
+        return ready;
 
 //        Node pre = null;
 //        Node next = null;
