@@ -185,6 +185,7 @@ public class Code03_DoubleLinkedListQueueStack {
                 size++;
             } else {
                 head.last = doubleNode;
+                doubleNode.next = head;
                 head = doubleNode;
                 size++;
             }
@@ -198,6 +199,7 @@ public class Code03_DoubleLinkedListQueueStack {
                 size++;
             } else {
                 doubleNode.next = head;
+                head.last = doubleNode;
                 head = doubleNode;
                 size++;
             }
@@ -212,6 +214,7 @@ public class Code03_DoubleLinkedListQueueStack {
                 size++;
             } else {
                 tail.next = doubleNode;
+                doubleNode.last = tail;
                 tail = doubleNode;
                 size++;
             }
