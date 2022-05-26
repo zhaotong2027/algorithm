@@ -12,7 +12,7 @@ public class Code0009_IsPalindrome {
         String xS = String.valueOf(x);
 
         for (int i = 0; i < xS.length() - i; i++) {
-            if (!xS.substring(i, i+1).equals(xS.substring(xS.length() - i - 1, xS.length() - i))) {
+            if (!xS.substring(i, i + 1).equals(xS.substring(xS.length() - i - 1, xS.length() - i))) {
                 return false;
             }
         }

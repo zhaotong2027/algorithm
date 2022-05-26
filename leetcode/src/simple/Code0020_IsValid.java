@@ -47,8 +47,8 @@ public class Code0020_IsValid {
                 if (filo.size() == 0) {
                     return false;
                 }
-                if (filo.get(filo.size()-1).equals(s.substring(i, i + 1))) {
-                    filo.remove(filo.size()-1);
+                if (filo.get(filo.size() - 1).equals(s.substring(i, i + 1))) {
+                    filo.remove(filo.size() - 1);
                 } else {
                     return false;
                 }

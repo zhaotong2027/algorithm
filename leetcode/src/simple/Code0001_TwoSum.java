@@ -6,7 +6,7 @@ public class Code0001_TwoSum {
 //        int target = 9;
 //        int[] nums = new int[]{3,2,4};
 //        int target = 6;
-        int[] nums = new int[]{3,3};
+        int[] nums = new int[]{3, 3};
         int target = 6;
         int[] res = twoSum(nums, target);
         System.out.println(res);
