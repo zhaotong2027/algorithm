@@ -2,7 +2,7 @@ package Class04;
 
 public class Code05_AddLinkedList {
     public static void main(String[] args) {
-        ListNode list1 = new ListNode(0);
+        ListNode list1 = null;
 //        ListNode list11 = new ListNode(3);
 //        ListNode list111 = new ListNode(6);
 //        list1.next = list11;
@@ -16,21 +16,7 @@ public class Code05_AddLinkedList {
 //        list222.next = list2222;
 
         ListNode node = addLinkedList(list1, list2);
-        while (list1 != null) {
-            System.out.print(list1.val);
-            list1 = list1.next;
-        }
-        System.out.print("+");
-        while (list2 != null) {
-            System.out.print(list2.val);
-            list2 = list2.next;
-        }
-        System.out.print("=");
-        while (node != null) {
-            System.out.print(node.val);
-            node = node.next;
-        }
-        System.out.println("");
+        printResult(list1, list2, node);
     }
 
     public static ListNode addLinkedList(ListNode list1, ListNode list2) {
@@ -59,10 +45,7 @@ public class Code05_AddLinkedList {
             if (list1 == null && list2 != null) {
                 num = list2.val + node.val;
                 node.val = num % 10;
-                if (list2.next != null) {
-                    node.next = new ListNode(num / 10);
-                }
-                if (num > 9) {
+                if (num > 9 || list2.next != null) {
                     node.next = new ListNode(num / 10);
                 }
                 node = node.next;
@@ -72,10 +55,7 @@ public class Code05_AddLinkedList {
             if (list1 != null && list2 == null) {
                 num = list1.val + node.val;
                 node.val = num % 10;
-                if (list1.next != null) {
-                    node.next = new ListNode(num / 10);
-                }
-                if (num > 9) {
+                if (num > 9 || list1.next != null) {
                     node.next = new ListNode(num / 10);
                 }
                 node = node.next;
@@ -95,6 +75,23 @@ public class Code05_AddLinkedList {
 
         }
         return reusltNode;
+    }
+
+    public static void printResult(ListNode list1, ListNode list2, ListNode node) {
+        printLinkedList(list1);
+        System.out.print("+");
+        printLinkedList(list2);
+        System.out.print("=");
+        printLinkedList(node);
+        System.out.println("");
+
+    }
+
+    public static void printLinkedList(ListNode node) {
+        while (node != null) {
+            System.out.print(node.val);
+            node = node.next;
+        }
     }
 
     public static class ListNode {
