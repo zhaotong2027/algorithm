@@ -24,15 +24,13 @@ public class Code0021_MergeTwoLists {
     }
 
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        if (list1 == null) {
-            return list2;
-        }
-        if (list2 == null) {
-            return list1;
+        if (list1 == null || list2 == null) {
+            return list1 == null? list2 : list1;
         }
 
         ListNode head = null;
         ListNode tail = null;
+        // 可以用pre cur next 三个指针循环遍历
         while (list1 != null || list2 != null) {
             if (list1 == null) {
                 tail.next = list2;
