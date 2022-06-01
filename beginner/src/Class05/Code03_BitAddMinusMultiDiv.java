@@ -1,6 +1,8 @@
 package Class05;
 
 // 除法太难，先跳过：https://www.mashibing.com/study?courseNo=337&sectionNo=30762&callbackUrl=%2Fsubject%2Fstudyline%2F1%3FcourseId%3D9495
+// https://www.mashibing.com/study?courseNo=337
+// 39、40、41 乘除法，系统最小值转绝对值
 public class Code03_BitAddMinusMultiDiv {
     public static void main(String[] args) {
 //        int a = 46;
