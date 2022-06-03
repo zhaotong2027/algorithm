@@ -2,19 +2,19 @@ package Class04_LinkedList;
 
 public class Code04_ReverseKGroupLinkedList {
     public static void main(String[] args) {
-        ListNode listNode1 = new ListNode(1);
-        ListNode listNode2 = new ListNode(2);
-        ListNode listNode3 = new ListNode(3);
-        ListNode listNode4 = new ListNode(4);
-        ListNode listNode5 = new ListNode(5);
-        listNode1.next = listNode2;
-        listNode2.next = listNode3;
-        listNode3.next = listNode4;
-        listNode4.next = listNode5;
+        LinkedListNode node1 = new LinkedListNode(1);
+        LinkedListNode node2 = new LinkedListNode(2);
+        LinkedListNode node3 = new LinkedListNode(3);
+        LinkedListNode node4 = new LinkedListNode(4);
+        LinkedListNode node5 = new LinkedListNode(5);
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
 
         int k = 3;
 
-        ListNode node = reverseKGroup(listNode1, k);
+        LinkedListNode node = reverseKGroup(node1, k);
         while (node != null) {
             System.out.println(node.val);
             node = node.next;
@@ -22,9 +22,9 @@ public class Code04_ReverseKGroupLinkedList {
 
     }
 
-    public static ListNode reverseKGroup(ListNode head, int k) {
-        ListNode start = head;
-        ListNode end = getKGroupEnd(start, k);
+    public static LinkedListNode reverseKGroup(LinkedListNode head, int k) {
+        LinkedListNode start = head;
+        LinkedListNode end = getKGroupEnd(start, k);
         if (end == null) {
             return head;
         }
@@ -32,7 +32,7 @@ public class Code04_ReverseKGroupLinkedList {
         head = end;
         reverse(start, end);
         // 上组的尾节点
-        ListNode lastEnd = start;
+        LinkedListNode lastEnd = start;
         while (lastEnd.next != null) {
             start = lastEnd.next;
             end = getKGroupEnd(start, k);
@@ -46,11 +46,11 @@ public class Code04_ReverseKGroupLinkedList {
         return head;
     }
 
-    public static void reverse(ListNode start, ListNode end) {
+    public static void reverse(LinkedListNode start, LinkedListNode end) {
         end = end.next;
-        ListNode pre = null;
-        ListNode cur = start;
-        ListNode next = null;
+        LinkedListNode pre = null;
+        LinkedListNode cur = start;
+        LinkedListNode next = null;
         while (cur != end) {
             next = cur.next;
             cur.next = pre;
@@ -60,7 +60,7 @@ public class Code04_ReverseKGroupLinkedList {
         start.next = end;
     }
 
-    public static ListNode getKGroupEnd(ListNode start, int k) {
+    public static LinkedListNode getKGroupEnd(LinkedListNode start, int k) {
         if (start.next == null) {
             return start;
         }
@@ -70,20 +70,4 @@ public class Code04_ReverseKGroupLinkedList {
         return start;
     }
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

@@ -2,8 +2,6 @@ package Class03;
 
 import java.util.ArrayList;
 
-import static Class01.Code05_Sort_Insert.insertSort4;
-
 /**
  * 有序数组中找到num：二分法
  */
@@ -19,13 +17,13 @@ public class Code01_Dichotomy {
 //        ints.add(137);
 //        ints.add(60);
 //        ints.add(171);
-
-        // 排序
+//
+//        // 排序
 //        ArrayList<Integer> sortInts = insertSort4(ints);
 //        System.out.println(sortInts.toString());
-        // 找数
+//        // 找数
 //        System.out.println(mostRightLessNumIndex(sortInts, 5));
-
+//
 //        ArrayList<Integer> ints = randomdiffInts(9, 5);
 //        System.out.println(ints.toString());
 ////        [4, 1, 3, 0, 3]

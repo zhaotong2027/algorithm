@@ -2,33 +2,33 @@ package Class04_LinkedList;
 
 public class Code06_AddLinkedListBetter {
     public static void main(String[] args) {
-        ListNode list1 = new ListNode(5);
-        ListNode list11 = new ListNode(3);
-        ListNode list111 = new ListNode(6);
+        LinkedListNode list1 = new LinkedListNode(5);
+        LinkedListNode list11 = new LinkedListNode(3);
+        LinkedListNode list111 = new LinkedListNode(6);
         list1.next = list11;
         list11.next = list111;
-        ListNode list2 = new ListNode(5);
-        ListNode list22 = new ListNode(9);
-        ListNode list222 = new ListNode(9);
-        ListNode list2222 = new ListNode(9);
+        LinkedListNode list2 = new LinkedListNode(5);
+        LinkedListNode list22 = new LinkedListNode(9);
+        LinkedListNode list222 = new LinkedListNode(9);
+        LinkedListNode list2222 = new LinkedListNode(9);
         list2.next = list22;
         list22.next = list222;
         list222.next = list2222;
 
-        ListNode node = addLinkedList(list1, list2);
+        LinkedListNode node = addLinkedList(list1, list2);
         printResult(list1, list2, node);
     }
 
-    public static ListNode addLinkedList(ListNode list1, ListNode list2) {
+    public static LinkedListNode addLinkedList(LinkedListNode list1, LinkedListNode list2) {
         int len1 = getLinkedLength(list1);
         int len2 = getLinkedLength(list2);
-        ListNode longLinked = len1 >= len2 ? list1 : list2;
-        ListNode shortLinked = len1 >= len2 ? list2 : list1;
-        ListNode last = longLinked;  // 最后补位标识
+        LinkedListNode longLinked = len1 >= len2 ? list1 : list2;
+        LinkedListNode shortLinked = len1 >= len2 ? list2 : list1;
+        LinkedListNode last = longLinked;  // 最后补位标识
         int carry = 0;
         int num = 0;
 
-        ListNode returnNode = null;
+        LinkedListNode returnNode = null;
         while (shortLinked != null) {
             num = longLinked.val + shortLinked.val + carry;
             carry = num / 10;
@@ -48,13 +48,13 @@ public class Code06_AddLinkedListBetter {
             longLinked = longLinked.next;
         }
         if (carry == 1) {
-            last.next = new ListNode(1);
+            last.next = new LinkedListNode(1);
         }
         return returnNode;
     }
 
 
-    public static int getLinkedLength(ListNode node) {
+    public static int getLinkedLength(LinkedListNode node) {
         int len = 0;
         while (node != null) {
             node = node.next;
@@ -64,7 +64,7 @@ public class Code06_AddLinkedListBetter {
     }
 
 
-    public static void printResult(ListNode list1, ListNode list2, ListNode node) {
+    public static void printResult(LinkedListNode list1, LinkedListNode list2, LinkedListNode node) {
         printLinkedList(list1);
         System.out.print("+");
         printLinkedList(list2);
@@ -74,27 +74,10 @@ public class Code06_AddLinkedListBetter {
 
     }
 
-    public static void printLinkedList(ListNode node) {
+    public static void printLinkedList(LinkedListNode node) {
         while (node != null) {
             System.out.print(node.val);
             node = node.next;
-        }
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
         }
     }
 }

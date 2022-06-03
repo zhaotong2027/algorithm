@@ -86,8 +86,8 @@ public class Code03_DoubleLinkedListQueueStack {
     }
 
     public static class DoubleLinkedListQueueStack<V> {
-        public DoubleNode head;
-        public DoubleNode tail;
+        public DoubleLinkedListNode head;
+        public DoubleLinkedListNode tail;
         public int size;
 
         public DoubleLinkedListQueueStack() {
@@ -163,59 +163,59 @@ public class Code03_DoubleLinkedListQueueStack {
         }
 
         private void pushStackTail(int value) {
-            DoubleNode doubleNode = new DoubleNode(value);
+            DoubleLinkedListNode doubleLinkedListNode = new DoubleLinkedListNode(value);
             if (tail == null) {
-                tail = doubleNode;
-                head = doubleNode;
+                tail = doubleLinkedListNode;
+                head = doubleLinkedListNode;
                 size++;
             } else {
-                tail.next = doubleNode;
-                doubleNode.last = tail;
-                tail = doubleNode;
+                tail.next = doubleLinkedListNode;
+                doubleLinkedListNode.last = tail;
+                tail = doubleLinkedListNode;
                 size++;
             }
         }
 
         // 尾部添加新节点，尾指针不变，头指针last指向新节点，头节点变为新节点
         private void pushQueueTail(int value) {
-            DoubleNode doubleNode = new DoubleNode(value);
+            DoubleLinkedListNode doubleLinkedListNode = new DoubleLinkedListNode(value);
             if (tail == null) {
-                tail = doubleNode;
-                head = doubleNode;
+                tail = doubleLinkedListNode;
+                head = doubleLinkedListNode;
                 size++;
             } else {
-                head.last = doubleNode;
-                doubleNode.next = head;
-                head = doubleNode;
+                head.last = doubleLinkedListNode;
+                doubleLinkedListNode.next = head;
+                head = doubleLinkedListNode;
                 size++;
             }
         }
 
         private void pushStackHead(int value) {
-            DoubleNode doubleNode = new DoubleNode(value);
+            DoubleLinkedListNode doubleLinkedListNode = new DoubleLinkedListNode(value);
             if (tail == null) {
-                tail = doubleNode;
-                head = doubleNode;
+                tail = doubleLinkedListNode;
+                head = doubleLinkedListNode;
                 size++;
             } else {
-                doubleNode.next = head;
-                head.last = doubleNode;
-                head = doubleNode;
+                doubleLinkedListNode.next = head;
+                head.last = doubleLinkedListNode;
+                head = doubleLinkedListNode;
                 size++;
             }
         }
 
         // 头部添加新节点，头指针不变，尾指针next指向新节点，尾节点变为新节点
         private void pushQueueHead(int value) {
-            DoubleNode doubleNode = new DoubleNode(value);
+            DoubleLinkedListNode doubleLinkedListNode = new DoubleLinkedListNode(value);
             if (head == null) {
-                head = doubleNode;
-                tail = doubleNode;
+                head = doubleLinkedListNode;
+                tail = doubleLinkedListNode;
                 size++;
             } else {
-                tail.next = doubleNode;
-                doubleNode.last = tail;
-                tail = doubleNode;
+                tail.next = doubleLinkedListNode;
+                doubleLinkedListNode.last = tail;
+                tail = doubleLinkedListNode;
                 size++;
             }
         }
@@ -260,16 +260,6 @@ public class Code03_DoubleLinkedListQueueStack {
                 return head.value;
             }
             return Integer.MAX_VALUE;
-        }
-    }
-
-    public static class DoubleNode<V> {
-        public DoubleNode last;
-        public DoubleNode next;
-        public int value;
-
-        public DoubleNode(int v) {
-            value = v;
         }
     }
 }

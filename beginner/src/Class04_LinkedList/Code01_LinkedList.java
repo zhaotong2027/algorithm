@@ -28,32 +28,32 @@ public class Code01_LinkedList {
 //        doubleNode1.next = new DoubleNode(2);
 //        doubleNode1.next.next = new DoubleNode(3);
 
-        DoubleNode doubleNode1 = new DoubleNode(1);
-        DoubleNode doubleNode2 = new DoubleNode(2);
-        DoubleNode doubleNode3 = new DoubleNode(3);
-        doubleNode1.next = doubleNode2;
-        doubleNode2.next = doubleNode3;
-        doubleNode3.last = doubleNode2;
-        doubleNode2.last = doubleNode1;
-        reverseDoubleLinked(doubleNode1);
+        DoubleLinkedListNode dNode1 = new DoubleLinkedListNode(1);
+        DoubleLinkedListNode dNode2 = new DoubleLinkedListNode(2);
+        DoubleLinkedListNode dNode3 = new DoubleLinkedListNode(3);
+        dNode1.next = dNode2;
+        dNode2.next = dNode3;
+        dNode3.last = dNode2;
+        dNode2.last = dNode1;
+        reverseDoubleLinked(dNode1);
 
         System.out.println("next: ");
-        while (doubleNode3 != null) {
-            System.out.print(doubleNode3.value + " ");
-            doubleNode3 = doubleNode3.next;
+        while (dNode3 != null) {
+            System.out.print(dNode3.value + " ");
+            dNode3 = dNode3.next;
         }
         System.out.println();
 
         System.out.println("last: ");
-        while (doubleNode1 != null) {
-            System.out.print(doubleNode1.value + " ");
-            doubleNode1 = doubleNode1.last;
+        while (dNode1 != null) {
+            System.out.print(dNode1.value + " ");
+            dNode1 = dNode1.last;
         }
     }
 
-    public static Node reverseLinkedList(Node node) {
-        Node head = node;
-        Node ready = null;
+    public static LinkedListNode reverseLinkedList(LinkedListNode node) {
+        LinkedListNode head = node;
+        LinkedListNode ready = null;
         while (node != null) {
             head = node.next;
             node.next = ready;
@@ -73,36 +73,18 @@ public class Code01_LinkedList {
 //        return pre;
     }
 
-    private static class Node {
-        public Node next;
-        public int value;
-
-        public Node(int v) {
-            value = v;
-        }
-    }
-
-    public static DoubleNode reverseDoubleLinked(DoubleNode node) {
-        DoubleNode head = node;
-        DoubleNode ready = null;
-        while (node != null) {
-            head = node.next;
-            node.next = ready;
-            node.last = head;
-            ready = node;
-            node = head;
+    public static DoubleLinkedListNode reverseDoubleLinked(DoubleLinkedListNode dNode) {
+        DoubleLinkedListNode head = dNode;
+        DoubleLinkedListNode ready = null;
+        while (dNode != null) {
+            head = dNode.next;
+            dNode.next = ready;
+            dNode.last = head;
+            ready = dNode;
+            dNode = head;
         }
 
         return ready;
     }
 
-    private static class DoubleNode {
-        public DoubleNode last;
-        public DoubleNode next;
-        public int value;
-
-        public DoubleNode(int v) {
-            value = v;
-        }
-    }
 }
