@@ -1,4 +1,4 @@
-package Class06;
+package Class06_Comparator;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -57,7 +57,7 @@ public class Code03_mergeKLists {
             heap.add(pre.next);
         }
         while (!heap.isEmpty()) {
-            ListNode cur= heap.poll();
+            ListNode cur = heap.poll();
             pre.next = cur;
             pre = cur;
             if (cur.next != null) {

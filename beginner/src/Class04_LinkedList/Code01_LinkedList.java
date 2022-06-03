@@ -1,4 +1,4 @@
-package Class04;
+package Class04_LinkedList;
 
 /**
  * 跳转结构：单链表值、next指针；双链表值、last指针、next指针

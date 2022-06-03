@@ -1,4 +1,4 @@
-package Class05;
+package Class05_Bit;
 
 /**
  * 基础：位运算Class01_Code01

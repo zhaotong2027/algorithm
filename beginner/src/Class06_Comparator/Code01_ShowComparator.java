@@ -1,4 +1,4 @@
-package Class06;
+package Class06_Comparator;
 
 import java.util.ArrayList;
 import java.util.Arrays;

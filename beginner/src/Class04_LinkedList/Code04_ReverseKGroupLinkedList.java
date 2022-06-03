@@ -1,4 +1,4 @@
-package Class04;
+package Class04_LinkedList;
 
 public class Code04_ReverseKGroupLinkedList {
     public static void main(String[] args) {

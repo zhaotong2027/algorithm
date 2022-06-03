@@ -1,4 +1,4 @@
-package Class04;
+package Class04_LinkedList;
 
 public class Code06_AddLinkedListBetter {
     public static void main(String[] args) {

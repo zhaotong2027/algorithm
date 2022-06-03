@@ -1,4 +1,4 @@
-package Class04;
+package Class04_LinkedList;
 
 /**
  * 目标：用双链表实现从头部或尾部同时能执行的先进先出、后进先出
