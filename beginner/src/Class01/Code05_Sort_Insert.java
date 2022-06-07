@@ -6,7 +6,6 @@ import java.util.ArrayList;
  *
  * 插入排序：扑克牌抽新牌插入到已有牌当中
  *
- *
  * 时间复杂度：
  * 空间复杂度：
  */
@@ -21,6 +20,7 @@ public class Code05_Sort_Insert {
         }
         return ints;
     }
+
     // 不是插入排序，sad，也不是冒泡，看起来像选择排序
     // 外循环下标i从0开始，每次+1；内循环从i+1开始，每次+1；
     // 第一轮比对0和1、2、3、4。。。如果发现i不是最小的，就把最小的和i交换，第一轮结束选出最小的放第一位
@@ -29,7 +29,7 @@ public class Code05_Sort_Insert {
         for (int i = 0; i < ints.size(); i++) {
             for (int j = i + 1; j < ints.size(); j++) {
                 swap(ints, i, j);
-            System.out.println(ints.toString());
+                System.out.println(ints.toString());
             }
         }
         return ints;
@@ -43,7 +43,7 @@ public class Code05_Sort_Insert {
         int N = ints.size();
         for (int end = 1; end < N; end++) {
             int newNumIndex = end;
-            while (newNumIndex-1 >= 0 && ints.get(newNumIndex-1) > ints.get(newNumIndex)) {
+            while (newNumIndex - 1 >= 0 && ints.get(newNumIndex - 1) > ints.get(newNumIndex)) {
                 swap(ints, newNumIndex - 1, newNumIndex);
                 newNumIndex--;
                 System.out.println(ints.toString());
@@ -62,7 +62,7 @@ public class Code05_Sort_Insert {
 //                    ints.set(i + 1, ints.get(i));
 //                    ints.set(i, temp);
 //                }
-                swap(ints, i, i+1);
+                swap(ints, i, i + 1);
                 System.out.println(ints.toString());
             }
         }
@@ -74,20 +74,21 @@ public class Code05_Sort_Insert {
         // 外层循环，范围end，每轮范围+1
         for (int end = 1; end < ints.size(); end++) {
             // 内层循环，待排序数end，基数end-1，用冒泡把数插入范围内合适的位置
-            for (int pre = end; pre > 0 && ints.get(pre-1) > ints.get(pre); pre--) {
+            for (int pre = end; pre > 0 && ints.get(pre - 1) > ints.get(pre); pre--) {
 //                if (ints.get(i) > ints.get(i + 1)) {
 //                    Integer temp = ints.get(i + 1);
 //                    ints.set(i + 1, ints.get(i));
 //                    ints.set(i, temp);
 //                }
-                swap(ints, pre-1, pre);
+                swap(ints, pre - 1, pre);
 //                System.out.println(ints.toString());
             }
         }
         return ints;
     }
+
     public static void main(String[] args) {
-        ArrayList<Integer> ints = new ArrayList<Integer>();
+        ArrayList<Integer> ints = new ArrayList<>();
         ints.add(77);
         ints.add(8);
         ints.add(5);
@@ -97,7 +98,23 @@ public class Code05_Sort_Insert {
         ints.add(4);
         ints.add(19);
         System.out.println(ints.toString());
-        System.out.println(insertSort2(ints).toString());
+        System.out.println(insertSort5(ints));
     }
+
+    // 默写
+    public static ArrayList<Integer> insertSort5(ArrayList<Integer> ints) {
+        for (int i = 1; i < ints.size(); i++) {  // 选牌
+            for (int j = 0; j < i; j++) {  // 设定范围
+                if (ints.get(i) < ints.get(j)) {
+                    int temp = ints.get(i);
+                    ints.set(i, ints.get(j));
+                    ints.set(j, temp);
+                }
+            }
+//            System.out.println(ints);
+        }
+        return ints;
+    }
+
 }
 // 排序重要指标，排序范围、基值、待排序数值、循环
