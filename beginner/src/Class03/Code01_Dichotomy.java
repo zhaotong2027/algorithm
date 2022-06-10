@@ -2,28 +2,30 @@ package Class03;
 
 import java.util.ArrayList;
 
+import static Class01.Code05_Sort_Insert.insertSort4;
+
 /**
  * 有序数组中找到num：二分法
  */
 public class Code01_Dichotomy {
     public static void main(String[] args) {
-//        ArrayList<Integer> ints = new ArrayList<Integer>();
-//        ints.add(150);
-//        ints.add(12);
-//        ints.add(167);
-//        ints.add(136);
-//        ints.add(130);
-//        ints.add(130);
-//        ints.add(137);
-//        ints.add(60);
-//        ints.add(171);
-//
-//        // 排序
-//        ArrayList<Integer> sortInts = insertSort4(ints);
-//        System.out.println(sortInts.toString());
-//        // 找数
-//        System.out.println(mostRightLessNumIndex(sortInts, 5));
-//
+        ArrayList<Integer> ints = new ArrayList<Integer>();
+        ints.add(150);
+        ints.add(12);
+        ints.add(167);
+        ints.add(136);
+        ints.add(130);
+        ints.add(130);
+        ints.add(137);
+        ints.add(60);
+        ints.add(171);
+
+        // 排序
+        ArrayList<Integer> sortInts = insertSort4(ints);
+        System.out.println(sortInts.toString());
+        // 找数
+        System.out.println(mostRightLessNumIndex(sortInts, 5));
+
 //        ArrayList<Integer> ints = randomdiffInts(9, 5);
 //        System.out.println(ints.toString());
 ////        [4, 1, 3, 0, 3]
@@ -31,17 +33,17 @@ public class Code01_Dichotomy {
 //        System.out.println(minIndex);
 //        System.out.println(testOneMinIndex(ints, minIndex));
 
-        int maxLen = 20;
-        int maxValue = 200;
-        int times = 10000;
-        for (int i = 0; i < times; i++ ) {
-            ArrayList<Integer> ints = randomdiffInts(maxLen, maxValue);
-//                [150, 12, 167, 136, 130, 130, 137, 60, 171]
-            int minIndex = oneMinIndex(ints);
-            if (!testOneMinIndex(ints, minIndex)) {
-                System.out.println(ints.toString());
-            }
-        }
+//        int maxLen = 20;
+//        int maxValue = 200;
+//        int times = 10000;
+//        for (int i = 0; i < times; i++ ) {
+//            ArrayList<Integer> ints = randomdiffInts(maxLen, maxValue);
+////                [150, 12, 167, 136, 130, 130, 137, 60, 171]
+//            int minIndex = oneMinIndex(ints);
+//            if (!testOneMinIndex(ints, minIndex)) {
+//                System.out.println(ints.toString());
+//            }
+//        }
 
     }
 

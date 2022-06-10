@@ -18,7 +18,7 @@ public class Code01_Sort_Merge {
         if (L == R) {
             return;
         }
-        // int mid = (L + R) / 2; L+R底标可能会越界，下面这种写法更安全
+        // int mid = (L + R) / 2; L+R后续底标可能会越界，下面这种写法更安全
         int mid = L + (R - L) / 2;
         process(ints, L, mid);
         process(ints, mid + 1, R);
