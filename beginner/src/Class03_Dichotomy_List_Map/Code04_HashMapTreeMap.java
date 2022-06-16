@@ -1,4 +1,4 @@
-package Class03;
+package Class03_Dichotomy_List_Map;
 
 import java.util.HashMap;
 import java.util.TreeMap;

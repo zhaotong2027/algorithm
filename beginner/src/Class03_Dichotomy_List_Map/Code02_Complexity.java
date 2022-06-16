@@ -1,4 +1,4 @@
-package Class03;
+package Class03_Dichotomy_List_Map;
 
 /**
  * 时间复杂度：描述常数操作次数

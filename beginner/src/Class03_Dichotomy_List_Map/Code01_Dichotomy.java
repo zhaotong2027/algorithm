@@ -1,4 +1,4 @@
-package Class03;
+package Class03_Dichotomy_List_Map;
 
 import java.util.ArrayList;
 
@@ -32,7 +32,7 @@ public class Code01_Dichotomy {
 //        int minIndex = oneMinIndex(ints);
 //        System.out.println(minIndex);
 //        System.out.println(testOneMinIndex(ints, minIndex));
-
+//
 //        int maxLen = 20;
 //        int maxValue = 200;
 //        int times = 10000;
