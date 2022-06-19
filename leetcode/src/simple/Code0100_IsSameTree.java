@@ -19,7 +19,6 @@ public class Code0100_IsSameTree {
 
     public static boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null ^ q == null) {
-            System.out.println("====");
             return false;
         }
         if (p == null && q == null) {
