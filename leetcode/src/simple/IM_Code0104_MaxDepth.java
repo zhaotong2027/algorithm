@@ -1,5 +1,8 @@
 package simple;
 
+/**
+ * 递归
+ */
 public class IM_Code0104_MaxDepth {
 
     public static void main(String[] args) {

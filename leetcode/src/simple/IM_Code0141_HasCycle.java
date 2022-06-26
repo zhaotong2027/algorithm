@@ -1,5 +1,9 @@
 package simple;
 
+/**
+ * 双指针：快慢指针
+ * 有环判断：快慢指针指向同一指针
+ */
 public class IM_Code0141_HasCycle {
     public static void main(String[] args) {
         ListNode head = new ListNode(3);

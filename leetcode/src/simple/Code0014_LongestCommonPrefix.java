@@ -1,4 +1,4 @@
-package src.simple;
+package simple;
 
 public class Code0014_LongestCommonPrefix {
     public static void main(String[] args) {

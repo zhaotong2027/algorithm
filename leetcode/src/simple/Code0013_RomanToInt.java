@@ -1,6 +1,4 @@
-package src.simple;
-
-import com.sun.source.tree.Tree;
+package simple;
 
 import java.util.ArrayList;
 import java.util.HashMap;

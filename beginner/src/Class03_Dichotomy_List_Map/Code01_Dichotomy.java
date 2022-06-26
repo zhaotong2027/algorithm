@@ -6,6 +6,7 @@ import static Class01.Code05_Sort_Insert.insertSort4;
 
 /**
  * 有序数组中找到num：二分法
+ * 核心思想：通过二分遍历缩小范围，不用遍历所有数就能找到数
  */
 public class Code01_Dichotomy {
     public static void main(String[] args) {

@@ -7,7 +7,7 @@ import java.util.List;
  * 中序遍历：左->中->右
  * 遍历整个树的过程中，第二次遇到到时才打印
  */
-public class Code0094_InorderTraversal {
+public class Code0094_InOrderTraversal {
     public static void main(String[] args) {
         TreeNode p = new TreeNode(1);
 //        p.left = new TreeNode(1);

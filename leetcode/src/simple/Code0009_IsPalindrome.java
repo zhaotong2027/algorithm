@@ -1,4 +1,4 @@
-package src.simple;
+package simple;
 
 public class Code0009_IsPalindrome {
     public static void main(String[] args) {
