@@ -1,6 +1,6 @@
 package simple;
 
-public class Code0104_MaxDepth {
+public class IM_Code0104_MaxDepth {
 
     public static void main(String[] args) {
         TreeNode p = new TreeNode(2);
